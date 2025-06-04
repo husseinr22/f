@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 20 30% 8%; /* #141008 */
+  --foreground: 45 25% 92%; /* #EFEBE2 */
+  --muted: 20 25% 14%; /* #241F15 */
+  --muted-foreground: 45 20% 60%; /* #9B916B */
+  --popover: 20 30% 10%; /* #1A140A */
+  --popover-foreground: 45 25% 92%; /* #EFEBE2 */
+  --card: 20 25% 12%; /* #1F1A12 */
+  --card-foreground: 45 25% 92%; /* #EFEBE2 */
+  --border: 20 20% 22%; /* #38312A */
+  --input: 20 20% 22%; /* #38312A */
+  --primary: 43 85% 58%; /* #D4AF37 */
+  --primary-foreground: 20 30% 8%; /* #141008 */
+  --secondary: 20 25% 18%; /* #2E261C */
+  --secondary-foreground: 45 25% 92%; /* #EFEBE2 */
+  --accent: 25 65% 45%; /* #B8823D */
+  --accent-foreground: 20 30% 8%; /* #141008 */
+  --destructive: 0 84% 60%; /* #EF4444 */
+  --destructive-foreground: 0 0% 98%; /* #FAFAFA */
+  --ring: 43 85% 58%; /* #D4AF37 */
+  --radius: 0.75rem;
+  --mandi-brown: 20 50% 20%; /* #523A26 */
+  --mandi-gold: 43 85% 58%; /* #D4AF37 */
+  --mandi-peru: 25 65% 45%; /* #B8823D */
+  --mandi-wheat: 45 35% 78%; /* #CFC2A4 */
+  --mandi-orange: 15 100% 60%; /* #FF6B35 */
+}
+
+.dark {
+  --background: 30 15% 8%; /* #141210 */
+  --foreground: 45 20% 95%; /* #F5F2EE */
+  --muted: 30 10% 15%; /* #262118 */
+  --muted-foreground: 45 10% 65%; /* #A59A8A */
+  --popover: 30 15% 8%; /* #141210 */
+  --popover-foreground: 45 20% 95%; /* #F5F2EE */
+  --card: 30 15% 8%; /* #141210 */
+  --card-foreground: 45 20% 95%; /* #F5F2EE */
+  --border: 30 10% 20%; /* #332C23 */
+  --input: 30 10% 20%; /* #332C23 */
+  --primary: 45 70% 55%; /* #DAA520 */
+  --primary-foreground: 30 20% 15%; /* #2D251A */
+  --secondary: 30 10% 20%; /* #332C23 */
+  --secondary-foreground: 45 20% 95%; /* #F5F2EE */
+  --accent: 25 50% 60%; /* #CD853F */
+  --accent-foreground: 0 0% 100%; /* #FFFFFF */
+  --destructive: 0 62% 30%; /* #991B1B */
+  --destructive-foreground: 0 0% 98%; /* #FAFAFA */
+  --ring: 45 70% 55%; /* #DAA520 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Noto Sans Arabic', system-ui, sans-serif;
+    direction: rtl;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Amiri', serif;
+  }
+}
+
+@layer components {
+  .ornate-border {
+    background: linear-gradient(45deg, hsl(var(--mandi-gold)), hsl(var(--mandi-peru)));
+    padding: 3px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  }
+  
+  .ornate-border-inner {
+    background: hsl(var(--card));
+    border-radius: 12px;
+  }
+  
+  .arabic-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23DAA520' fill-opacity='0.1'%3E%3Cpath d='M20 20L0 0h20v20zM0 20L20 40H0V20z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .mandi-brown {
+    color: hsl(var(--mandi-brown));
+  }
+
+  .bg-mandi-brown {
+    background-color: hsl(var(--mandi-brown));
+  }
+
+  .mandi-gold {
+    color: hsl(var(--mandi-gold));
+  }
+
+  .bg-mandi-gold {
+    background-color: hsl(var(--mandi-gold));
+  }
+
+  .mandi-peru {
+    color: hsl(var(--mandi-peru));
+  }
+
+  .bg-mandi-peru {
+    background-color: hsl(var(--mandi-peru));
+  }
+
+  .mandi-wheat {
+    color: hsl(var(--mandi-wheat));
+  }
+
+  .bg-mandi-wheat {
+    background-color: hsl(var(--mandi-wheat));
+  }
+
+  .mandi-orange {
+    color: hsl(var(--mandi-orange));
+  }
+
+  .bg-mandi-orange {
+    background-color: hsl(var(--mandi-orange));
+  }
+
+  .text-mandi-brown {
+    color: hsl(var(--mandi-brown));
+  }
+
+  .text-mandi-gold {
+    color: hsl(var(--mandi-gold));
+  }
+
+  .text-mandi-peru {
+    color: hsl(var(--mandi-peru));
+  }
+
+  .text-mandi-wheat {
+    color: hsl(var(--mandi-wheat));
+  }
+
+  .text-mandi-orange {
+    color: hsl(var(--mandi-orange));
+  }
+}
+
+@layer utilities {
+  .gradient-mandi {
+    background: linear-gradient(135deg, hsl(var(--mandi-wheat)), hsl(var(--background)));
+  }
+
+  .gradient-mandi-dark {
+    background: linear-gradient(135deg, hsl(var(--mandi-brown)), hsl(var(--mandi-peru)));
+  }
+}
